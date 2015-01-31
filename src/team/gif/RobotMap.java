@@ -31,5 +31,31 @@ public class RobotMap {
     
     // Analog ports
     public static int gyroRate = 0; // Gyro MUST be on either 0 or 1
+=======
+    public static final int frontLeft = 1;
+    public static final int frontRight = 2;
+    public static final int rearLeft = 3;
+    public static final int rearRight = 4;
+    public static final int collectorLeft = 5;
+    public static final int collectorRight = 6;
+    public static final int elevator = 7;
+    public static final int totePusher = 8;
+    
+    // DIO ports
+    public static final int elevatorA = 4;
+    public static final int elevatorB = 5;
+    
+    // Relay ports (solenoids)
+    public static final int collectorA = 0;
+    public static final int collectorB = 1;
+    public static final int leftRCarmA = 2;
+    public static final int leftRCarmB = 3;
+    public static final int rightRCarmA = 4;
+    public static final int rightRCarmB = 5;
+    public static final int hooksA = 6;
+    public static final int hooksB = 7;
+    public static final int chopSticksA = 8;
+    public static final int chopSticksB = 9;
+>>>>>>> 8daa2f1d31652ef998fc4338f5703c54649400e3
     
 }
