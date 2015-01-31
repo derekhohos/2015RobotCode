@@ -1,38 +1,35 @@
 package team.gif.commands;
 
-import team.gif.Globals;
 import team.gif.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * @author Tyler
+ * @author PatrickUbelhor
  */
-public class PusherExtend extends Command {
+public class InitCollectorMotors extends Command {
 
-    public PusherExtend() {
-    	requires(Robot.pusher);
-        
+	private boolean done;
+	
+    public InitCollectorMotors() {
+        requires(Robot.collectorMotors);
+        done = false;
     }
 
-    
     protected void initialize() {
+    	Robot.collectorMotors.enable();
+    	done = true;
     }
 
-  
     protected void execute() {
-    	Robot.pusher.setSpeed(Globals.pusherSpeed);
     }
-
 
     protected boolean isFinished() {
-        return false; //Robot.pusher.getMax();
+        return done;
     }
 
-    
     protected void end() {
     }
 
-   
     protected void interrupted() {
     }
 }

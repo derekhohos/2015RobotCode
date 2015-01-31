@@ -5,34 +5,28 @@ import team.gif.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * @author Tyler
+ *
  */
-public class PusherExtend extends Command {
+public class CollectorEject extends Command {
 
-    public PusherExtend() {
-    	requires(Robot.pusher);
-        
+    public CollectorEject() {
+        requires(Robot.collectorMotors);
     }
 
-    
     protected void initialize() {
     }
 
-  
     protected void execute() {
-    	Robot.pusher.setSpeed(Globals.pusherSpeed);
+    	Robot.collectorMotors.drive(-Globals.collectorSpeed, -Globals.collectorSpeed);
     }
-
 
     protected boolean isFinished() {
-        return false; //Robot.pusher.getMax();
+        return false;
     }
 
-    
     protected void end() {
     }
 
-   
     protected void interrupted() {
     }
 }

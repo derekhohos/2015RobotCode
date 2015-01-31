@@ -53,14 +53,23 @@ public class OI {
 		aux2 = new JoystickButton(auxStick, 2);
 		aux3 = new JoystickButton(auxStick, 3);
 		aux4 = new JoystickButton(auxStick, 4);
+		aux6 = new JoystickButton(auxStick, 6);
+		aux7 = new JoystickButton(auxStick, 7);
 		
-		rightTrigger.whenReleased(new TankDriveLinear());
-		right2.whenReleased(new TankDriveSquared());
-		right4.whenReleased(new AutoDriveStraight(3.0));
-		right5.whenReleased(new AutoDriveStraight(6.0));
 		
-		aux6.whileActive(new ElevatorRaise(0));
-		aux7.whileActive(new ElevatorLower(0));
+		leftTrigger.whenReleased(new TankDriveLinear());
+		left2.whenReleased(new TankDriveSquared());
+		
+		rightTrigger.toggleWhenPressed(new CollectorOpen());
+		right2.whileHeld(new CollectorReceive());
+		right3.whileHeld(new CollectorEject());
+		
+		aux2.whileHeld(new ElevatorLower(0));
+		aux3.whileHeld(new ElevatorRaise(0));
+		aux4.toggleWhenPressed(new ChopsticksOpen());
+		aux6.whileHeld(new PusherExtend());
+		aux7.whileHeld(new PusherRetract());
+		
 	}
 	
 }

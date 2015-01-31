@@ -1,37 +1,36 @@
 package team.gif.commands;
 
-import team.gif.Globals;
 import team.gif.Robot;
+import edu.wpi.first.wpilibj.CANTalon.ControlMode;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * @author Tyler
+ * @author PatrickUbelhor
  */
-public class PusherRetract extends Command {
+public class InitPusher extends Command {
 
-    public PusherRetract() {
+	private boolean done;
+	
+    public InitPusher() {
         requires(Robot.pusher);
+        done = false;
     }
 
-    
     protected void initialize() {
+    	Robot.pusher.enableMotors(ControlMode.PercentVbus);
+    	done = true;
     }
 
-  
     protected void execute() {
-    	Robot.pusher.setSpeed(-Globals.pusherSpeed);
     }
 
-   
     protected boolean isFinished() {
-        return false; //Robot.pusher.getMin();
+        return done;
     }
-
 
     protected void end() {
     }
 
- 
     protected void interrupted() {
     }
 }

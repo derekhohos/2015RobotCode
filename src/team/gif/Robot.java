@@ -1,9 +1,9 @@
 
 package team.gif;
 
-import team.gif.commands.InitElevator;
 import team.gif.commands.*;
 import team.gif.subsystems.*;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -18,16 +18,21 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 
+	public static final Elevator elevator = new Elevator();
 	public static final Drivetrain chassis = new Drivetrain();
 	public static final Pusher pusher = new Pusher();
+	public static final Chopsticks chopsticks = new Chopsticks();
+	public static final CollectorMotors collectorMotors = new CollectorMotors();
+	public static final CollectorPneumatics collectorPneumo = new CollectorPneumatics();
 	public static OI oi;
 	
-	public static final Elevator elevator = new Elevator();
+	private static Compressor compressor = new Compressor(0);
 
-	Command driveInit;
 	Command elevInit;
 	Command driveInitAuto;
 	Command driveInitTeleop;
+	Command pusherInit;
+	Command collectorInit;
 	
     /**
      * This function is run when the robot is first started up and should be
@@ -35,14 +40,17 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
-		
-		elevInit = new InitElevator();
-		elevInit.start();
-		
 		driveInitAuto = new InitDrivetrainAuto();
 		driveInitTeleop = new InitDrivetrainTeleop();
+		pusherInit = new InitPusher();
+		collectorInit = new InitCollectorMotors();
+		elevInit = new InitElevator();
 		
+		compressor.start();
 		driveInitAuto.start();
+		pusherInit.start();
+		collectorInit.start();
+		elevInit.start();
     }
 
     public void autonomousInit() {

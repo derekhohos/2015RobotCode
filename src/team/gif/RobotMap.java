@@ -20,15 +20,6 @@ public class RobotMap {
     public static int pusherMax = 0;
     public static int pusherMin = 1;
     
-    // Relay ports (solenoids)
-    // Based off the list found here (1/21/15): http://oswegofirst.org/forum/viewtopic.php?f=12&t=2968
-    public static int collector = 0;
-    public static int leftArm = 1;
-    public static int rightArm = 2;
-    public static int hooks = 3;
-    public static int toteGrabber = 4;
-    public static int chopSticks = 5;
-    
     // Analog ports
     public static int gyroRate = 0;     
     // DIO ports

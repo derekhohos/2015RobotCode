@@ -1,38 +1,31 @@
 package team.gif.commands;
 
-import team.gif.Globals;
 import team.gif.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- * @author Tyler
+ * @author PatrickUbelhor
  */
-public class PusherExtend extends Command {
+public class ChopsticksOpen extends Command {
 
-    public PusherExtend() {
-    	requires(Robot.pusher);
-        
+    public ChopsticksOpen() {
+        requires(Robot.chopsticks);
     }
 
-    
     protected void initialize() {
     }
 
-  
     protected void execute() {
-    	Robot.pusher.setSpeed(Globals.pusherSpeed);
+    	Robot.chopsticks.open();
     }
-
 
     protected boolean isFinished() {
-        return false; //Robot.pusher.getMax();
+        return false;
     }
 
-    
     protected void end() {
     }
 
-   
     protected void interrupted() {
     }
 }
