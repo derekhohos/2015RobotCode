@@ -7,33 +7,45 @@ package team.gif;
 public class RobotMap {
 	
 	// CAN addresses
-    public static final int frontLeft = 0;
-    public static final int frontRight = 1;
-    public static final int rearLeft = 2;
-    public static final int rearRight = 3;
-    public static final int collectorLeft = 4;
-    public static final int collectorRight = 5;
-    public static final int elevator = 6;
-    public static final int totePusher = 7;
+    public static int frontLeft = 0;
+    public static int frontRight = 1;
+    public static int rearLeft = 2;
+    public static int rearRight = 3;
+    public static int collectorLeft = 4;
+    public static int collectorRight = 5;
+    public static int elevator = 6;
+    public static int totePusher = 7;
     
     // DIO ports
-    public static final int leftEncoderA = 0;
-    public static final int leftEncoderB = 1;
-    public static final int rightEncoderA = 2;
-    public static final int rightEncoderB = 3;
-    public static final int elevatorA = 4;
-    public static final int elevatorB = 5;
+    public static int pusherMax = 0;
+    public static int pusherMin = 1;
     
     // Relay ports (solenoids)
     // Based off the list found here (1/21/15): http://oswegofirst.org/forum/viewtopic.php?f=12&t=2968
-    public static final int collector = 0;
-    public static final int leftArm = 1;
-    public static final int rightArm = 2;
-    public static final int hooks = 3;
-    public static final int toteGrabber = 4;
-    public static final int chopSticks = 5;
+    public static int collector = 0;
+    public static int leftArm = 1;
+    public static int rightArm = 2;
+    public static int hooks = 3;
+    public static int toteGrabber = 4;
+    public static int chopSticks = 5;
     
     // Analog ports
-    public static final int gyroRate = 0; // Gyro MUST be on either 0 or 1
+    public static int gyroRate = 0;     
+    // DIO ports
+    public static int elevatorA = 4;
+    public static int elevatorB = 5;
+    
+    // Relay ports (solenoids)
+    public static int collectorA = 0;
+    public static int collectorB = 1;
+    public static int leftRCarmA = 2;
+    public static int leftRCarmB = 3;
+    public static int rightRCarmA = 4;
+    public static int rightRCarmB = 5;
+    public static int hooksA = 6;
+    public static int hooksB = 7;
+    public static int chopSticksA = 8;
+    public static int chopSticksB = 9;
+
     
 }
