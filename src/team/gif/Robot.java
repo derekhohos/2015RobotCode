@@ -18,6 +18,7 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 public class Robot extends IterativeRobot {
 
 	public static final Drivetrain chassis = new Drivetrain();
+	public static final Pusher pusher = new Pusher();
 	public static OI oi;
 
 	Command driveInit;

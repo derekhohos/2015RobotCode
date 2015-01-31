@@ -17,12 +17,8 @@ public class RobotMap {
     public static int totePusher = 7;
     
     // DIO ports
-    public static int leftEncoderA = 0;
-    public static int leftEncoderB = 1;
-    public static int rightEncoderA = 2;
-    public static int rightEncoderB = 3;
-    public static int elevatorA = 4;
-    public static int elevatorB = 5;
+    public static int pusherMax = 0;
+    public static int pusherMin = 1;
     
     // Relay ports (solenoids)
     // Based off the list found here (1/21/15): http://oswegofirst.org/forum/viewtopic.php?f=12&t=2968
