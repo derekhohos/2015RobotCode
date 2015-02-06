@@ -19,7 +19,7 @@ public class ElevatorRaise extends Command {
     }
 
     protected void execute() {
-    	Robot.elevator.setSpeed(.2);
+    	Robot.elevator.setSpeed(.6);
     }
 
     protected boolean isFinished() {

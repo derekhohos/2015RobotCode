@@ -54,7 +54,7 @@ public class Interface extends Command {
     	//RobotMap.chopSticks = (int) SmartDashboard.getNumber("chopSticks");
     	SmartDashboard.getString("Analog");
     	SmartDashboard.putNumber("gyroRate", 10);
-    	RobotMap.gyroRate = (int) SmartDashboard.getNumber("gyroRate");
+    	//RobotMap.gyroRate = (int) SmartDashboard.getNumber("gyroRate");
       	}
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {

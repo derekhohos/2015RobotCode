@@ -7,36 +7,33 @@ package team.gif;
 public class RobotMap {
 	
 	// CAN addresses
-    public static int frontLeft = 0;
-    public static int frontRight = 1;
-    public static int rearLeft = 2;
-    public static int rearRight = 3;
-    public static int collectorLeft = 4;
-    public static int collectorRight = 5;
-    public static int elevator = 6;
-    public static int totePusher = 7;
+    public static int totePusher = 1;
+    public static int collectorRight = 2;
+    public static int collectorLeft = 3;
+    public static int elevator = 4;
+    public static int frontRight = 5;
+    public static int rearRight = 6;
+    public static int frontLeft = 7;
+    public static int rearLeft = 8;
+
     
     // DIO ports
     public static int pusherMax = 0;
     public static int pusherMin = 1;
-    
-    // Analog ports
-    public static int gyroRate = 0;     
-    // DIO ports
     public static int elevatorA = 4;
     public static int elevatorB = 5;
     
     // Relay ports (solenoids)
     public static int collectorA = 0;
-    public static int collectorB = 1;
-    public static int leftRCarmA = 2;
-    public static int leftRCarmB = 3;
-    public static int rightRCarmA = 4;
-    public static int rightRCarmB = 5;
-    public static int hooksA = 6;
-    public static int hooksB = 7;
-    public static int chopSticksA = 8;
-    public static int chopSticksB = 9;
+    public static int collectorB = 0;
+    public static int leftRCarmA = 1;
+    public static int leftRCarmB = 1;
+    public static int rightRCarmA = 2;
+    public static int rightRCarmB = 2;
+    public static int hooksA = 3;
+    public static int hooksB = 3;
+    public static int chopSticksA = 4;
+    public static int chopSticksB = 4;
 
     
 }

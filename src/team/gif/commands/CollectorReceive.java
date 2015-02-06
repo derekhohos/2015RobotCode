@@ -17,7 +17,7 @@ public class CollectorReceive extends Command {
     }
 
     protected void execute() {
-    	Robot.collectorMotors.drive(Globals.collectorSpeed, Globals.collectorSpeed);
+    	Robot.collectorMotors.drive(-Globals.collectorSpeed, Globals.collectorSpeed);
     }
 
     protected boolean isFinished() {

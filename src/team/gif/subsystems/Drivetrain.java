@@ -65,7 +65,7 @@ public class Drivetrain extends Subsystem {
 	 */
     public void drive(double leftSet, double rightSet) {
     	frontLeft.set(leftSet);
-    	frontRight.set(rightSet);
+    	frontRight.set(-rightSet);
     	rearLeft.set(RobotMap.frontLeft);
     	rearRight.set(RobotMap.frontRight);
     }
@@ -73,6 +73,8 @@ public class Drivetrain extends Subsystem {
     private void enableMotors(ControlMode controlMode, double initLeftSetpoint, double initRightSetpoint) {
 		frontLeft.changeControlMode(controlMode);
 		frontRight.changeControlMode(controlMode);
+		rearLeft.changeControlMode(ControlMode.Follower);
+		rearRight.changeControlMode(ControlMode.Follower);
 		
 		drive(initLeftSetpoint, initRightSetpoint);
 		

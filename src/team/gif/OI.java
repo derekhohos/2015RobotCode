@@ -56,7 +56,6 @@ public class OI {
 		aux6 = new JoystickButton(auxStick, 6);
 		aux7 = new JoystickButton(auxStick, 7);
 		
-		
 		leftTrigger.whenReleased(new TankDriveLinear());
 		left2.whenReleased(new TankDriveSquared());
 		

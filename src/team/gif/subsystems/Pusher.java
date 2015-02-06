@@ -1,6 +1,7 @@
 package team.gif.subsystems;
 
 import team.gif.RobotMap;
+import team.gif.commands.PusherStandby;
 import edu.wpi.first.wpilibj.CANTalon;
 import edu.wpi.first.wpilibj.CANTalon.ControlMode;
 import edu.wpi.first.wpilibj.DigitalInput;
@@ -26,7 +27,7 @@ public class Pusher extends Subsystem {
     }
 
    public void initDefaultCommand() {
-		
+		setDefaultCommand(new PusherStandby());
 	}
    public void setSpeed(double speed) {
 	   totePusher.set(speed);
