@@ -65,7 +65,7 @@ public class Drivetrain extends Subsystem {
 	 */
     public void drive(double leftSet, double rightSet) {
     	frontLeft.set(leftSet);
-    	frontRight.set(-rightSet);
+    	frontRight.set(rightSet);
     	rearLeft.set(RobotMap.frontLeft);
     	rearRight.set(RobotMap.frontRight);
     }

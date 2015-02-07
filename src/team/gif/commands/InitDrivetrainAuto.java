@@ -18,7 +18,7 @@ public class InitDrivetrainAuto extends Command {
 
     protected void initialize() {
     	Robot.chassis.initBase(Globals.leftEncoderReversed, Globals.rightEncoderReversed,
-    	                       Globals.rightMotorReversed, Globals.leftMotorReversed);
+    	                       Globals.leftMotorReversed, Globals.rightMotorReversed);
     	Robot.chassis.enableAutoControl();
     	done = true;
     }

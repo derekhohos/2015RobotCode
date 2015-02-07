@@ -9,9 +9,11 @@ public class Globals {
 	 */
 	
 	public static final double collectorSpeed = 1;
-	public static final double pusherSpeed = 1;
+	public static final double pusherSpeed = 0.5;
+	public static final double elevatorSpeed = 0.8;
 	
-	public static final double encoderDistPerTick = 0.1256;
+	public static final double elevEncoderDistperTick = 0;
+	public static final double driveEncoderDistPerTick = 0.1256;
 	public static final boolean leftEncoderReversed = true;
 	public static final boolean rightEncoderReversed = false;
 	
@@ -21,4 +23,14 @@ public class Globals {
 	public static final double drivetrainP = 1;
 	public static final double drivetrainI = 0;
 	public static final double drivetrainD = 0;
+	
+	public static final double elevatorP = 1;
+	public static final double elevatorI = 0;
+	public static final double elevatorD = 0;
+	
+	public static final double kElevatorLevel1 = 0;
+	public static final double kElevatorLevel2 = 0;
+	public static final double kElevatorLevel3 = 0;
+	public static final double kElevatorlevel4 = 0;
+	public static final double kElevatorLevel5 = 0;
 }

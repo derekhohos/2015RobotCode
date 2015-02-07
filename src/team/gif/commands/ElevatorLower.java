@@ -1,5 +1,6 @@
 package team.gif.commands;
 
+import team.gif.Globals;
 import team.gif.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -19,7 +20,7 @@ public class ElevatorLower extends Command {
     }
 
     protected void execute() {
-    	Robot.elevator.setSpeed(-0.6);
+    	Robot.elevator.setSpeed(-Globals.elevatorSpeed);
     }
 
     protected boolean isFinished() {

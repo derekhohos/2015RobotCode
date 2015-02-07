@@ -18,7 +18,7 @@ public class Pusher extends Subsystem {
 
     public void enableMotors(ControlMode controlMode) {
         totePusher.changeControlMode(controlMode);
-        
+        totePusher.set(0);
         totePusher.enableControl();
     }
     
@@ -26,17 +26,21 @@ public class Pusher extends Subsystem {
     	totePusher.disableControl();
     }
 
-   public void initDefaultCommand() {
-		setDefaultCommand(new PusherStandby());
-	}
    public void setSpeed(double speed) {
 	   totePusher.set(speed);
    }
+   
    public boolean getMax() {
 	   return pusherMax.get();
    }
+   
    public boolean getMin() {
 	   return pusherMin.get();
    }
+   
+   public void initDefaultCommand() {
+		setDefaultCommand(new PusherStandby());
+	}
+   
 }
 

@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class PusherStandby extends Command {
 
     public PusherStandby() {
-        
+        requires(Robot.pusher);
     }
 
   

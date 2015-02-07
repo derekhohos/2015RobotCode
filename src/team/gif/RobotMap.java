@@ -15,7 +15,6 @@ public class RobotMap {
     public static int rearRight = 6;
     public static int frontLeft = 7;
     public static int rearLeft = 8;
-
     
     // DIO ports
     public static int pusherMax = 0;
@@ -35,5 +34,4 @@ public class RobotMap {
     public static int chopSticksA = 4;
     public static int chopSticksB = 4;
 
-    
 }
