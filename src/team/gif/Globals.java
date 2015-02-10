@@ -8,7 +8,7 @@ public class Globals {
 	 * DO NOT EDIT UNLESS YOU KNOW WHAT YOU ARE DOING. PLEASE CONSULT SOMEONE WHO DOES.
 	 */
 	
-	public static final double collectorSpeed = 1;
+	public static double collectorSpeed = 1;
 	public static final double pusherSpeed = 0.5;
 	public static final double elevatorSpeed = 0.8;
 	
@@ -28,9 +28,9 @@ public class Globals {
 	public static final double elevatorI = 0;
 	public static final double elevatorD = 0;
 	
-	public static final double kElevatorLevel1 = 0;
-	public static final double kElevatorLevel2 = 0;
-	public static final double kElevatorLevel3 = 0;
-	public static final double kElevatorlevel4 = 0;
-	public static final double kElevatorLevel5 = 0;
+	public static int kElevatorLevel1 = 50;
+	public static int kElevatorLevel2 = 50;
+	public static int kElevatorLevel3 = 50;
+	public static int kElevatorLevel4 = 50;
+	public static int kElevatorLevel5 = 50;
 }

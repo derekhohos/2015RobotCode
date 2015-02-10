@@ -18,6 +18,7 @@ public class InitElevator extends Command {
 
     protected void initialize() {
     	Robot.elevator.enableMotors(ControlMode.PercentVbus);
+    	Robot.elevator.resetEncoder();
     	done = true;
     }
 

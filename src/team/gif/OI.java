@@ -36,6 +36,7 @@ public class OI {
 	private static Button aux5;
 	private static Button aux6;
 	private static Button aux7;
+	private static Button aux11;
 	
 	public OI() {
 		leftTrigger = new JoystickButton(leftStick, 1);
@@ -55,6 +56,7 @@ public class OI {
 		aux4 = new JoystickButton(auxStick, 4);
 		aux6 = new JoystickButton(auxStick, 6);
 		aux7 = new JoystickButton(auxStick, 7);
+		aux11 = new JoystickButton(auxStick, 11);
 		
 		leftTrigger.whenReleased(new TankDriveLinear());
 		left2.whenReleased(new TankDriveSquared());
@@ -62,12 +64,20 @@ public class OI {
 		rightTrigger.toggleWhenPressed(new CollectorOpen());
 		right2.whileHeld(new CollectorReceive());
 		right3.whileHeld(new CollectorEject());
+		right4.whileHeld(new CollectorRotate(false));
+		right5.whileHeld(new CollectorRotate(true));
 		
-		aux2.whileHeld(new ElevatorLower(0));
-		aux3.whileHeld(new ElevatorRaise(0));
 		aux4.toggleWhenPressed(new ChopsticksOpen());
+		aux2.whenReleased(new ElevatorLower(100));
+		aux3.whenReleased(new ElevatorRaise(100));
+		//aux4.whenReleased(new AutoElevLevel(Globals.kElevatorLevel1));
+		//aux5.whenReleased(new AutoElevLevel(Globals.kElevatorLevel2));
+		//aux6.whenReleased(new AutoElevLevel(Globals.kElevatorLevel3));
+		//aux7.whenReleased(new AutoElevLevel(Globals.kElevatorLevel4));
+		//aux11.whenReleased(new AutoElevLevel(Globals.kElevatorLevel5));
 		aux6.whileHeld(new PusherExtend());
 		aux7.whileHeld(new PusherRetract());
+		//aux11.toggleWhenPressed(new Interface());
 		
 	}
 	

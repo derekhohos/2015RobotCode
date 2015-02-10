@@ -17,20 +17,22 @@ public class RobotMap {
     public static int rearLeft = 8;
     
     // DIO ports
-    public static int pusherMax = 0;
-    public static int pusherMin = 1;
+    public static int elevatorMax = 0;
+    public static int elevatorMin = 1;
+    public static int pusherMax = 2;
+    public static int pusherMin = 3;
     public static int elevatorA = 4;
     public static int elevatorB = 5;
     
     // Relay ports (solenoids)
     public static int collectorA = 0;
     public static int collectorB = 0;
-    public static int leftRCarmA = 1;
-    public static int leftRCarmB = 1;
-    public static int rightRCarmA = 2;
-    public static int rightRCarmB = 2;
-    public static int hooksA = 3;
-    public static int hooksB = 3;
+    public static int hooksA = 1;
+    public static int hooksB = 1;
+    public static int leftRCarmA = 2;
+    public static int leftRCarmB = 2;
+    public static int rightRCarmA = 3;
+    public static int rightRCarmB = 3;
     public static int chopSticksA = 4;
     public static int chopSticksB = 4;
 
