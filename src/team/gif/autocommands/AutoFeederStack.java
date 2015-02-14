@@ -1,4 +1,4 @@
-package team.gif.commands.auto;
+package team.gif.autocommands;
 
 import team.gif.Globals;
 import team.gif.commands.ChopsticksClose;

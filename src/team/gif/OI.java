@@ -1,8 +1,8 @@
 package team.gif;
 
 import team.gif.commands.*;
-import team.gif.commands.auto.AutoElevLevel;
-import team.gif.commands.auto.AutoFeederStack;
+import team.gif.autocommands.AutoElevLevel;
+import team.gif.autocommands.AutoFeederStack;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
