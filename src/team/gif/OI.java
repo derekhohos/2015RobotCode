@@ -1,6 +1,8 @@
 package team.gif;
 
 import team.gif.commands.*;
+import team.gif.commands.auto.AutoElevLevel;
+import team.gif.commands.auto.AutoFeederStack;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -36,6 +38,9 @@ public class OI {
 	private static Button aux5;
 	private static Button aux6;
 	private static Button aux7;
+	private static Button aux8;
+	private static Button aux9;
+	private static Button aux10;
 	private static Button aux11;
 	
 	public OI() {
@@ -54,12 +59,18 @@ public class OI {
 		aux2 = new JoystickButton(auxStick, 2);
 		aux3 = new JoystickButton(auxStick, 3);
 		aux4 = new JoystickButton(auxStick, 4);
+		aux5 = new JoystickButton(auxStick, 5);
 		aux6 = new JoystickButton(auxStick, 6);
 		aux7 = new JoystickButton(auxStick, 7);
+		aux8 = new JoystickButton(auxStick, 8);
+		aux9 = new JoystickButton(auxStick, 9);
+		aux10 = new JoystickButton(auxStick, 10);
 		aux11 = new JoystickButton(auxStick, 11);
 		
 		leftTrigger.whenReleased(new TankDriveLinear());
-		left2.whenReleased(new TankDriveSquared());
+		left4.whenReleased(new TankDriveSquared());
+		left3.whileHeld(new PusherExtend());
+		left2.whileHeld(new PusherRetract());
 		
 		rightTrigger.toggleWhenPressed(new CollectorOpen());
 		right2.whileHeld(new CollectorReceive());
@@ -67,17 +78,17 @@ public class OI {
 		right4.whileHeld(new CollectorRotate(false));
 		right5.whileHeld(new CollectorRotate(true));
 		
+		auxTrigger.whileHeld(new ResetElev());
+		aux2.whileHeld(new ElevatorLower());
+		aux3.whileHeld(new ElevatorRaise());
 		aux4.toggleWhenPressed(new ChopsticksOpen());
-		aux2.whenReleased(new ElevatorLower(100));
-		aux3.whenReleased(new ElevatorRaise(100));
-		//aux4.whenReleased(new AutoElevLevel(Globals.kElevatorLevel1));
-		//aux5.whenReleased(new AutoElevLevel(Globals.kElevatorLevel2));
-		//aux6.whenReleased(new AutoElevLevel(Globals.kElevatorLevel3));
-		//aux7.whenReleased(new AutoElevLevel(Globals.kElevatorLevel4));
-		//aux11.whenReleased(new AutoElevLevel(Globals.kElevatorLevel5));
-		aux6.whileHeld(new PusherExtend());
-		aux7.whileHeld(new PusherRetract());
-		//aux11.toggleWhenPressed(new Interface());
+		aux6.whenReleased(new AutoElevLevel(Globals.kElevatorLevel1));
+		aux7.whenReleased(new AutoElevLevel(Globals.kElevatorLevel2));
+		aux8.whenReleased(new AutoElevLevel(Globals.kElevatorLevel3));
+		aux9.whenReleased(new AutoElevLevel(Globals.kElevatorLevel4));
+		aux10.whenReleased(new AutoElevLevel(Globals.kElevatorLevel5));
+		aux5.whenReleased(new AutoFeederStack());
+		//aux6.whileHeld(new PusherExtend());
 		
 	}
 	

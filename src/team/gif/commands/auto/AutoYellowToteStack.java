@@ -1,13 +1,13 @@
-package team.gif.commands;
+package team.gif.commands.auto;
 
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 /**
  * @author PatrickUbelhor
  */
-public class AutoToteStack extends CommandGroup {
+public class AutoYellowToteStack extends CommandGroup {
     
-    public  AutoToteStack() {
+    public  AutoYellowToteStack() {
         // Add Commands here:
         // e.g. addSequential(new Command1());
         //      addSequential(new Command2());

@@ -1,5 +1,6 @@
 package team.gif.commands;
 
+import team.gif.Globals;
 import team.gif.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
@@ -9,17 +10,23 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  */
 public class ElevatorStandby extends Command {
 
+	private double setP = 0;
+	
     public ElevatorStandby() {
     	requires(Robot.elevator);
     }
 
     protected void initialize() {
+    	setP = Robot.elevator.get();
     }
 
     protected void execute() {
-    	Robot.elevator.setSpeed(0);
+    	
+    	double error = (setP - Robot.elevator.get());
+    	
+    	Robot.elevator.setSpeed(0.5 * (error / Globals.elevatorP));
+    	
     	SmartDashboard.putNumber("ElevatorHeight", Robot.elevator.get());
-    	SmartDashboard.putNumber("ElevatorRaw", Robot.elevator.getRaw());
     	SmartDashboard.putBoolean("ElevatorDirection", Robot.elevator.getDirection());
     	SmartDashboard.putBoolean("ElevIsStopped", Robot.elevator.isStopped());
     	SmartDashboard.putBoolean("ElevatorMin", Robot.elevator.getMin());

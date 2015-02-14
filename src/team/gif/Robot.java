@@ -76,12 +76,7 @@ public class Robot extends IterativeRobot {
 
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
-        SmartDashboard.putData(chassis);
-        SmartDashboard.putData(chopsticks);
-        SmartDashboard.putData(collectorMotors);
-        SmartDashboard.putData(collectorPneumo);
         SmartDashboard.putData(elevator);
-        SmartDashboard.putData(pusher);
     }
     
     /**

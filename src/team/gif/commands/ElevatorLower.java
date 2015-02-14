@@ -9,12 +9,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * @author Armaan
  */
 public class ElevatorLower extends Command {
-	
-	int minHeight;
 
-    public ElevatorLower(int setpoint) {
-      requires(Robot.elevator);
-      minHeight = Robot.elevator.get() - setpoint;
+    public ElevatorLower() {
+    	requires(Robot.elevator);
     }
 
     protected void initialize() {
@@ -27,17 +24,17 @@ public class ElevatorLower extends Command {
     		Robot.elevator.setSpeed(0);
     	}
     	SmartDashboard.putNumber("ElevatorHeight", Robot.elevator.get());
-    	SmartDashboard.putNumber("ElevSetpoint", minHeight);
     	SmartDashboard.putBoolean("ElevatorMin", Robot.elevator.getMin());
     	SmartDashboard.putBoolean("ElevatorMax", Robot.elevator.getMax());
     }
 
     protected boolean isFinished() {
-        return Robot.elevator.get() < minHeight;
+        return !Robot.elevator.getMin();
     }
 
     protected void end() {
     	Robot.elevator.setSpeed(0);
+    	Robot.elevator.resetEncoder();
     }
 
     protected void interrupted() {

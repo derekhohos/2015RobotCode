@@ -9,12 +9,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
  * @author Armaan
  */
 public class ElevatorRaise extends Command {
-	
-	int maxHeight; 
 
-    public ElevatorRaise(int setpoint) {
+    public ElevatorRaise() {
     	requires(Robot.elevator);
-    	maxHeight = Robot.elevator.get() + setpoint;
     }
 
     protected void initialize() {
@@ -27,13 +24,12 @@ public class ElevatorRaise extends Command {
     		Robot.elevator.setSpeed(0);
     	}
     	SmartDashboard.putNumber("ElevatorHeight", Robot.elevator.get());
-    	SmartDashboard.putNumber("ElevSetpoint", maxHeight);
     	SmartDashboard.putBoolean("ElevatorMin", Robot.elevator.getMin());
     	SmartDashboard.putBoolean("ElevatorMax", Robot.elevator.getMax());
     }
 
     protected boolean isFinished() {
-        return Robot.elevator.get() > maxHeight;
+        return false;
     }
 
     protected void end() {

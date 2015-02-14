@@ -22,12 +22,12 @@ public class Interface extends Command {
     }
 
     protected void execute() {
-    	Globals.collectorSpeed = SmartDashboard.getNumber("CollectorSpeed");
+    	/*Globals.collectorSpeed = SmartDashboard.getNumber("CollectorSpeed");
     	Globals.kElevatorLevel1 = SmartDashboard.getInt("kElevatorLevel1");
     	Globals.kElevatorLevel2 = SmartDashboard.getInt("kElevatorLevel2");
     	Globals.kElevatorLevel3 = SmartDashboard.getInt("kElevatorLevel3");
     	Globals.kElevatorLevel4 = SmartDashboard.getInt("kElevatorLevel4");
-    	Globals.kElevatorLevel5 = SmartDashboard.getInt("kElevatorLevel5");
+    	Globals.kElevatorLevel5 = SmartDashboard.getInt("kElevatorLevel5");*/
     }
     
     protected boolean isFinished() {

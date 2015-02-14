@@ -24,13 +24,19 @@ public class Globals {
 	public static final double drivetrainI = 0;
 	public static final double drivetrainD = 0;
 	
-	public static final double elevatorP = 1;
+	public static final double elevatorP = 50;
 	public static final double elevatorI = 0;
 	public static final double elevatorD = 0;
 	
-	public static int kElevatorLevel1 = 50;
-	public static int kElevatorLevel2 = 50;
-	public static int kElevatorLevel3 = 50;
-	public static int kElevatorLevel4 = 50;
-	public static int kElevatorLevel5 = 50;
+	public static final double kElevatorLevel1 = 0;
+	public static final double kElevatorLevel2 = 260;
+	public static final double kElevatorLevel3 = 520;
+	public static final double kElevatorLevel4 = 780;
+	public static final double kElevatorLevel5 = 1040;
+	
+	public static boolean chopsticksOpen = true;
+	public static boolean collectorOpen = true;
+	public static boolean targetElevLevel = false;
+	public static boolean firstLevel = true;
+	
 }

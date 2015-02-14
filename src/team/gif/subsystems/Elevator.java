@@ -25,6 +25,10 @@ public class Elevator extends Subsystem {
 		height.reset();
 	}
 	
+	public double getVoltage() {
+		return elevator.getBusVoltage();
+	}
+	
 	public boolean getMin() {
 		return elevatorMin.get();
 	}
@@ -37,10 +41,9 @@ public class Elevator extends Subsystem {
 		height.reset();
 	}
 	
-	public int get() {
-		//height.setDistancePerPulse(.5d);
-		//height.getDistance();
-		return height.get();
+	public double get() {
+		height.setDistancePerPulse(1.0d);
+		return height.getDistance();
 	}
 	
 	public int getRaw() {
