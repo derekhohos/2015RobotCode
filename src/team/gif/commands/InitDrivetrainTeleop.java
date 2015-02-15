@@ -1,5 +1,6 @@
 package team.gif.commands;
 
+import team.gif.Globals;
 import team.gif.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -16,6 +17,8 @@ public class InitDrivetrainTeleop extends Command {
     }
 
     protected void initialize() {
+    	Robot.chassis.initBase(Globals.leftEncoderReversed, Globals.rightEncoderReversed,
+    						   Globals.leftMotorReversed, Globals.rightMotorReversed);
     	Robot.chassis.enableTeleopControl();
     	done = true;
     }

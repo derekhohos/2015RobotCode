@@ -1,29 +1,35 @@
 package team.gif.commands;
 
+import team.gif.Globals;
 import team.gif.Robot;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * @author Armaan
  */
 public class ElevatorRaise extends Command {
-	
-	double maxHeight; 
 
-    public ElevatorRaise(double setpoint) {
+    public ElevatorRaise() {
     	requires(Robot.elevator);
-    	maxHeight = setpoint;
     }
 
     protected void initialize() {
     }
 
     protected void execute() {
-    	Robot.elevator.setSpeed(.2);
+    	if (Robot.elevator.getMax()) {
+    		Robot.elevator.setSpeed(Globals.elevatorSpeed);
+    	} else {
+    		Robot.elevator.setSpeed(0);
+    	}
+    	SmartDashboard.putNumber("ElevatorHeight", Robot.elevator.get());
+    	SmartDashboard.putBoolean("ElevatorMin", Robot.elevator.getMin());
+    	SmartDashboard.putBoolean("ElevatorMax", Robot.elevator.getMax());
     }
 
     protected boolean isFinished() {
-        return false; //Robot.elevator.getDist() > maxHeight;
+        return false;
     }
 
     protected void end() {

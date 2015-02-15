@@ -3,11 +3,16 @@ package team.gif;
 
 import team.gif.commands.*;
 import team.gif.subsystems.*;
+<<<<<<< HEAD
 import edu.wpi.first.wpilibj.CameraServer;
+=======
+import edu.wpi.first.wpilibj.Compressor;
+>>>>>>> 2bca2e44f6e616ed12b770db019827cfecf5fab8
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -18,16 +23,21 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
  */
 public class Robot extends IterativeRobot {
 
+	public static final Elevator elevator = new Elevator();
 	public static final Drivetrain chassis = new Drivetrain();
 	public static final Pusher pusher = new Pusher();
+	public static final Chopsticks chopsticks = new Chopsticks();
+	public static final CollectorMotors collectorMotors = new CollectorMotors();
+	public static final CollectorPneumatics collectorPneumo = new CollectorPneumatics();
 	public static OI oi;
 	
-	public static final Elevator elevator = new Elevator();
+	private static Compressor compressor = new Compressor(0);
 
-	Command driveInit;
 	Command elevInit;
 	Command driveInitAuto;
 	Command driveInitTeleop;
+	Command pusherInit;
+	Command collectorInit;
 	CameraServer server;
 	
     /**
@@ -36,19 +46,23 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 		oi = new OI();
-		
-		elevInit = new InitElevator();
-		elevInit.start();
-		
 		driveInitAuto = new InitDrivetrainAuto();
 		driveInitTeleop = new InitDrivetrainTeleop();
+		pusherInit = new InitPusher();
+		collectorInit = new InitCollectorMotors();
+		elevInit = new InitElevator();
 		
+		compressor.start();
 		driveInitAuto.start();
+		pusherInit.start();
+		collectorInit.start();
+		elevInit.start();
 		
         server = CameraServer.getInstance();
         server.setQuality(50);
         //the camera name (ex "cam0") can be found through the roborio web interface
         server.startAutomaticCapture("cam0");
+
     }
 
     public void autonomousInit() {
@@ -66,12 +80,14 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         //if (autonomousCommand != null) autonomousCommand.cancel();
+    	//if (driveInitAuto != null) { driveInitAuto.cancel(); };
     	driveInitTeleop.start();
     }
 
 
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
+        SmartDashboard.putData(elevator);
     }
     
     /**

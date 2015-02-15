@@ -1,33 +1,40 @@
 package team.gif.commands;
 
+import team.gif.Globals;
 import team.gif.Robot;
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * @author Armaan
  */
 public class ElevatorLower extends Command {
-	
-	double minHeight;
 
-    public ElevatorLower(double setpoint) {
-      requires(Robot.elevator);
-      minHeight = setpoint;
+    public ElevatorLower() {
+    	requires(Robot.elevator);
     }
 
     protected void initialize() {
     }
 
     protected void execute() {
-    	Robot.elevator.setSpeed(-.2);
+    	if (Robot.elevator.getMin()) {
+    		Robot.elevator.setSpeed(-Globals.elevatorSpeed);
+    	} else {
+    		Robot.elevator.setSpeed(0);
+    	}
+    	SmartDashboard.putNumber("ElevatorHeight", Robot.elevator.get());
+    	SmartDashboard.putBoolean("ElevatorMin", Robot.elevator.getMin());
+    	SmartDashboard.putBoolean("ElevatorMax", Robot.elevator.getMax());
     }
 
     protected boolean isFinished() {
-        return false; //Robot.elevator.getDist() < minHeight;
+        return !Robot.elevator.getMin();
     }
 
     protected void end() {
     	Robot.elevator.setSpeed(0);
+    	Robot.elevator.resetEncoder();
     }
 
     protected void interrupted() {
