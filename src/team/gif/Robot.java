@@ -1,9 +1,9 @@
 
 package team.gif;
 
-import team.gif.commands.InitElevator;
 import team.gif.commands.*;
 import team.gif.subsystems.*;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -28,6 +28,7 @@ public class Robot extends IterativeRobot {
 	Command elevInit;
 	Command driveInitAuto;
 	Command driveInitTeleop;
+	CameraServer server;
 	
     /**
      * This function is run when the robot is first started up and should be
@@ -43,6 +44,11 @@ public class Robot extends IterativeRobot {
 		driveInitTeleop = new InitDrivetrainTeleop();
 		
 		driveInitAuto.start();
+		
+        server = CameraServer.getInstance();
+        server.setQuality(50);
+        //the camera name (ex "cam0") can be found through the roborio web interface
+        server.startAutomaticCapture("cam0");
     }
 
     public void autonomousInit() {
